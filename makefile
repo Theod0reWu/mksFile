@@ -5,8 +5,8 @@ else
 endif
 
 all: main.o
-	CC -o program main.o
+	$(CC) -o program main.o
 main.o: main.c file.h
-	CC -c main.c
-run: 
+	$(CC) -c main.c
+run:
 	./program
