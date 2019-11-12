@@ -7,7 +7,12 @@ void rand_funct(int * arr){ //it's a random function!! arr length should be 10
 	}
 	close(f);
 }
-
+void rand_int(){
+	int f = open("/dev/random", O_RDONLY);
+	int num;
+	read(f, num, sizeof(int));
+	return num;
+}
 int main(int argc, char const *argv[])
 {
 	srand(time(NULL));
@@ -28,5 +33,5 @@ int main(int argc, char const *argv[])
 		printf("Random %i: %i\n", i, copy[i]);
 	}
 	return 0;
-	
+
 }
